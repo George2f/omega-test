@@ -1,0 +1,7 @@
+enum ITEM_STATUS_ENUM {
+    ORDERED = 'NARUČENO',
+    DELIVERED = 'ISPORUČENO',
+    CREATED = 'KREIRANO',
+}
+
+export default ITEM_STATUS_ENUM;
