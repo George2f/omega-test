@@ -3,12 +3,14 @@ import getApiClient from "../../../api/getApiClient"
 import getApiBase from "../../../api/getApiBase"
 import IContract from "../../types/IContract"
 import IArticle from "../../types/IArticle"
+import ITEM_STATUS_ENUM from "../../types/ItemStatusEnum"
 
 export default function createContract({
   contract,
 }: {
   contract: Partial<IContract>
 }) {
+  //TODO: napraviti sanitizaciju inputa
   return getApiClient()
     .post<IContract>(`contracts`, contract)
     .then((response) => response.data)
@@ -27,6 +29,7 @@ export function createContractMock(mockStore: {
       0
     )
     contract.id = biggestId + 1
+    contract.status = ITEM_STATUS_ENUM.CREATED
     mockStore.contracts.push(contract)
 
     await delay(300)
