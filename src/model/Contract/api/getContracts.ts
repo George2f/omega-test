@@ -1,7 +1,8 @@
-import { HttpResponse, http } from "msw"
+import { HttpResponse, delay, http } from "msw"
 import getApiClient from "../../../api/getApiClient"
 import getApiBase from "../../../api/getApiBase"
 import IContract from "../../types/IContract"
+import IArticle from "../../types/IArticle"
 
 export default function getContracts() {
   return getApiClient()
@@ -9,8 +10,15 @@ export default function getContracts() {
     .then((response) => response.data)
 }
 
-export function getContractsMock() {
-  return http.get(getApiBase() + "/contracts", () => {
-    return HttpResponse.json({}, { status: 200 })
+export function getContractsMock(mockStore: {
+  contracts: IContract[]
+  articles: {
+    [contractId: string]: IArticle[]
+  }
+}) {
+  return http.get(getApiBase() + "/contracts", async () => {
+    await delay(300)
+    console.log("mockStore.contracts", mockStore.contracts)
+    return HttpResponse.json(mockStore.contracts, { status: 200 })
   })
 }
