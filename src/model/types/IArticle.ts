@@ -1,8 +1,6 @@
-import ITEM_STATUS_ENUM from './ItemStatusEnum';
+import IItem from "./IItem"
 
-export default interface IArticle {
-    id: number;
-    naziv: string;
-    dobavljač: string;
-    status: ITEM_STATUS_ENUM;
+export default interface IArticle extends IItem {
+  naziv: string
+  dobavljač: string
 }
