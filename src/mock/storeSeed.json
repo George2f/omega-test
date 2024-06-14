@@ -51,7 +51,7 @@
         "id": 3,
         "naziv": "Ploča ugradbena kombinirana Gorenje GCE691BSC",
         "dobavljač": "Bijela tehnika",
-        "status": "ISPORUČEO"
+        "status": "ISPORUČENO"
       }
     ],
     "2": [
@@ -71,7 +71,7 @@
         "id": 6,
         "naziv": "Ploča savinuta kombinirana Gorenje GCE691BSC",
         "dobavljač": "Zelena tehnika",
-        "status": "ISPORUČEO"
+        "status": "ISPORUČENO"
       }
     ]
   }
