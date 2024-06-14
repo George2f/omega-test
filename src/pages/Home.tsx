@@ -21,7 +21,7 @@ import useCreateContract from "../model/Contract/hooks/useCreateContract"
 import isItemActive from "../utils/isItemActive"
 
 export default function Home() {
-  const { contracts } = useGetContracts()
+  const { contracts, isPending, error } = useGetContracts()
   const { updateContract } = useUpdateContract()
   const { createContract } = useCreateContract()
   const navigate = useNavigate()
@@ -88,6 +88,8 @@ export default function Home() {
           }}
         />
       </Dialog>
+      {isPending ? <p>Dohvaćam ugovore...</p> : null}
+      {error ? <p>Greška pri dohvačanju ugovora</p> : null}
       {filteredContracts?.map((c) => (
         <ContractCard
           contract={c}

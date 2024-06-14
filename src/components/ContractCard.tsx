@@ -23,14 +23,14 @@ export default function ContractCard({
     contract.rok_isporuke
   )
   return (
-    <Card>
+    <Card className="mb-1">
       <CardHeader className="flex flex-row justify-between">
         Broj: {contract.broj_ugovora}
         <div className="flex flex-row">
           <StatusBadge status={contract.status} />
         </div>
       </CardHeader>
-      <CardContent className="flex flex-row justify-between">
+      <CardContent className="flex flex-col lg:flex-row justify-between gap-1">
         <div>
           <h2>Kupac: {contract.kupac}</h2>
           <p className="flex flex-row items-center">
@@ -70,7 +70,7 @@ export default function ContractCard({
             )}
           </p>
         </div>
-        <div>
+        <div className="flex flex-row">
           {isItemActive(contract) ? (
             <Button
               variant="outline"
