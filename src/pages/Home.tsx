@@ -47,6 +47,7 @@ export default function Home() {
   }, [contracts, kupacFilterValue, showOnlyActive])
 
   // TODO: dodati skeleton loading state
+  // TODO: extractati zajedničke elemente headera u odvojenu komponentu i staviti ga u neki zajednički parent
   return (
     <div>
       <Card>

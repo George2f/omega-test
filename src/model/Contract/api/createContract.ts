@@ -31,6 +31,7 @@ export function createContractMock(mockStore: {
     contract.id = biggestId + 1
     contract.status = ITEM_STATUS_ENUM.CREATED
     mockStore.contracts.push(contract)
+    mockStore.articles[contract.id] = []
 
     await delay(300)
 
